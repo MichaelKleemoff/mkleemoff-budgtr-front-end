@@ -8,7 +8,7 @@ function TransactionDetails() {
 	const [transaction, setTransaction] = useState({});
 	let { index } = useParams();
 
-	let navigate = useNavigate();
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		fetch

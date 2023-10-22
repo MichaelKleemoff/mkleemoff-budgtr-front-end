@@ -8,7 +8,7 @@ const API = import.meta.env.VITE_BASE_URL;
 
 function TransactionEditForm() {
 	let { index } = useParams();
-	let navigate = useNavigate();
+	const navigate = useNavigate();
 
 	const [transaction, setTransaction] = useState({
 		item_name: '',
