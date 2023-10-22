@@ -8,11 +8,11 @@ function TransactionDetails() {
 	const [transaction, setTransaction] = useState({});
 	let { index } = useParams();
 
-	const navigate = useNavigate();
+	let navigate = useNavigate();
 
 	useEffect(() => {
 		fetch
-			.get(`${API}/transactions/${index}`)
+			.then(`${API}/transactions/${index}`)
 			.then((response) => setTransaction(response.data))
 			.catch(() => navigate('/*'));
 	}, [index, navigate]);
@@ -21,7 +21,7 @@ function TransactionDetails() {
 		const httpOptions = { method: 'DELETE' };
 
 		fetch
-			.delete(`${API}/transactions/${index}`, httpOptions)
+			.then(`${API}/transactions/${index}`, httpOptions)
 			.then(() => {
 				navigate('/transactions');
 			})
