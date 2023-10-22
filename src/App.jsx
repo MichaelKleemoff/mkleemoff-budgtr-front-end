@@ -1,11 +1,21 @@
+// DEPENDENCIES
 import './App.css';
-import potOfGold from './assets/pot-of-gold.jpeg';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+// PAGES
+import Home from './Pages/Home';
 
 function App() {
 	return (
-		<>
-			<img src={potOfGold} alt='pot of gold' />
-		</>
+		<div className='App'>
+			<Router>
+				<main>
+					<Routes>
+						<Route path='/' element={<Home />} />
+					</Routes>
+				</main>
+			</Router>
+		</div>
 	);
 }
 

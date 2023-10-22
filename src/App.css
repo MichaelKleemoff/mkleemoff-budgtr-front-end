@@ -2,4 +2,42 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+	background: #fafad2;
+}
+
+/* Home Page */
+
+.home {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Home Button */
+.btn-home {
+	color: #fff;
+	background-color: #198754;
+	border-color: #198754;
+	padding: 8px;
+	border-radius: 5px;
+	transition: all 0.7s;
+	box-shadow: 4px 4px 4px rgba(110, 110, 110, 0.4);
+}
+
+.btn-home:hover {
+	cursor: pointer;
+	color: olivedrab;
+	background-color: gold;
+	font-family: bold;
+	transition: 0.4s;
+}
+
+.btn-home:active {
+	box-shadow: 2px 2px 2px rgba(70, 70, 70, 0.5);
+	transform: translateY(4px);
 }
