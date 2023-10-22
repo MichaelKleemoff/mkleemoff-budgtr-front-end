@@ -22,14 +22,22 @@ function TransactionEditForm() {
 
 	useEffect(() => {
 		fetch
-			.get(`${API}/transactions/${index}`)
+			.then(`${API}/transactions/${index}`)
 			.then((response) => setTransaction(response.data))
 			.catch((error) => console.log(error));
 	}, [index]);
 
 	const updateTransaction = () => {
+		const httpOptions = {
+			method: 'PUT',
+			body: JSON.stringify(transaction),
+			headers: {
+				'Content-type': 'application/json',
+			},
+		};
+
 		fetch
-			.put(`${API}/transactions/${index}`, transaction)
+			.then(`${API}/transactions/${index}`, httpOptions)
 			.then((response) => {
 				setTransaction(response.data);
 
