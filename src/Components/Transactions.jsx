@@ -8,14 +8,12 @@ function Transactions() {
 	const [transactions, setTransactions] = useState([]);
 
 	useEffect(() => {
-		fetch
-			.get(`${API}/transactions`)
+		fetch(`${API}/transactions`)
 			.then((response) => {
-				setTransactions(response.data);
+				response.json();
 			})
-			.catch((error) => {
-				console.error(error);
-			});
+			.then((transactions) => setTransactions(transactions))
+			.catch((error) => console.error(error));
 	}, []);
 
 	const transAmountArray = transactions.map((transaction) => {
