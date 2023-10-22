@@ -1,4 +1,4 @@
-import TransactionEditForm from '../Components/TransactionEditForm';
+import TransactionEditForm from '../Components/TransactionEditForm.jsx';
 
 function Edit() {
 	return (
